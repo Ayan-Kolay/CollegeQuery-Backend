@@ -1,0 +1,10 @@
+// console.log("incomming request... ");
+// console.log(req.params);
+// console.log(req.hostname);
+// console.log(req.query);
+// console.log(req.path);
+// console.log(req.url);
+// console.log(req.originalUrl);
+// console.log(req.baseUrl);
+// console.log(req.ips);
+// console.log(req.ip);

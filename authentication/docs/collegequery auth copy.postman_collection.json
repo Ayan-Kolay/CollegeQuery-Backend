@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "aac55217-c25e-4cac-aba2-377cfe427b04",
+		"name": "collegequery auth copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17687169"
+	},
+	"item": [
+		{
+			"name": "Admin Pannel",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\":{\n      \"Email\":\"admin@mytag.com\",\n      \"Username\":\"admin\",\n      \"Password\":\"admin\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://185.208.207.55/v1/api/admin/login",
+									"protocol": "http",
+									"host": [
+										"185",
+										"208",
+										"207",
+										"55"
+									],
+									"path": [
+										"v1",
+										"api",
+										"admin",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Password",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Email\":\"admin@mytag.com\",\n    \"Username\":\"admin\",\n    \"Password\":\"password\",\n    \"NewPassword\":\"0000\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "185.208.207.55/v1/api/admin/updatepassword",
+									"host": [
+										"185",
+										"208",
+										"207",
+										"55"
+									],
+									"path": [
+										"v1",
+										"api",
+										"admin",
+										"updatepassword"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "check auth",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://185.208.207.55/v1/api/admin",
+									"protocol": "http",
+									"host": [
+										"185",
+										"208",
+										"207",
+										"55"
+									],
+									"path": [
+										"v1",
+										"api",
+										"admin"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Modify User",
+					"item": [
+						{
+							"name": "Verify User",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"UserID\": \"023a6785-38d6-4e17-b6bc-bda272cf8808\",\n    \"Email\": \"asdasdasd\",\n    \"verification\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "185.208.207.55/v1/api/admin/updateuser/verify",
+									"host": [
+										"185",
+										"208",
+										"207",
+										"55"
+									],
+									"path": [
+										"v1",
+										"api",
+										"admin",
+										"updateuser",
+										"verify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "34.70.242.122/v1/api/admin/updateuser/delete?UserID=9f9dd166-b63a-47ed-ab9a-6d07a8475f35&Email=asdfas",
+									"host": [
+										"34",
+										"70",
+										"242",
+										"122"
+									],
+									"path": [
+										"v1",
+										"api",
+										"admin",
+										"updateuser",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "UserID",
+											"value": "9f9dd166-b63a-47ed-ab9a-6d07a8475f35"
+										},
+										{
+											"key": "Email",
+											"value": "asdfas"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "check auth",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://185.208.207.55/v1/api/",
+									"protocol": "http",
+									"host": [
+										"185",
+										"208",
+										"207",
+										"55"
+									],
+									"path": [
+										"v1",
+										"api",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "signup",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\":{\n        \"FirstName\": \"replace with your FirstName\",\n        \"LastName\": \"replace with your LastName\",\n        \"Email\": \"replace with your Email\",\n        \"Phone_no\":\"0000000000\",\n        \"Password\": \"relpace with Password\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://185.208.207.55/v1/api/auth/signup",
+									"protocol": "http",
+									"host": [
+										"185",
+										"208",
+										"207",
+										"55"
+									],
+									"path": [
+										"v1",
+										"api",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verify email",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\" : {\n        \"otp\" : 0\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://185.208.207.55/v1/api/auth/verifyEmail",
+									"protocol": "http",
+									"host": [
+										"185",
+										"208",
+										"207",
+										"55"
+									],
+									"path": [
+										"v1",
+										"api",
+										"auth",
+										"verifyEmail"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "resend OTP",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://185.208.207.55/v1/api/auth/resendOtp",
+									"protocol": "http",
+									"host": [
+										"185",
+										"208",
+										"207",
+										"55"
+									],
+									"path": [
+										"v1",
+										"api",
+										"auth",
+										"resendOtp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "signin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\":{\n        \"Email\": \"23harshvardhan@gmail.com\",\n        \"Password\": \"asd\"\n    }\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "34.131.186.218/v1/api/auth/signin",
+									"host": [
+										"34",
+										"131",
+										"186",
+										"218"
+									],
+									"path": [
+										"v1",
+										"api",
+										"auth",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
